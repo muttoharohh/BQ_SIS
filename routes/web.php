@@ -62,3 +62,5 @@ Route::get('/soshum', function () {
 Route::get('/saintek', function () {
     return view('saintek');
 });
+
+Route::get('/sd1', 'SdsatusController@index');

@@ -11,10 +11,10 @@
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/home', function () {
     return view('home');
 });
 Route::get('/about', function () {
@@ -64,3 +64,8 @@ Route::get('/saintek', function () {
 });
 
 Route::get('/sd1', 'SdsatusController@index');
+Route::get('/sd2', 'SdduasController@index');
+Route::get('/sd3', 'SdtigasController@index');
+Route::get('/sd4', 'SdempatsController@index');
+Route::get('/sd5', 'SdlimasController@index');
+Route::get('/sd6', 'SdenamsController@index');

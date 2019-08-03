@@ -2,9 +2,7 @@
 
 @section('content')
     <div class="container products">
- 
         <div class="row">
- 
             @foreach($sdsatus as $sdsatu)
                     <div class="thumbnail">
                         <img src="{{ $sdsatu->videopel }}" width="500" height="300">

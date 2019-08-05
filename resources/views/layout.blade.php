@@ -32,16 +32,16 @@
     <body>
         <header id="header" id="home">
             <div class="container">
-                <div class="row align-items-center justify-content-between d-flex">
+                <div class="row align-items-center justify-content-between">
                     <div id="logo">
-                    <a href="/home"><img src="aset/img/logo.png" alt="" title="" /></a>
+                    <a href="/"><img src="aset/img/logo.png" alt="" title="" /></a>
                     </div>
                     <nav id="nav-menu-container">
                     <ul class="nav-menu">
-                        <li><a href="/home">Home</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/dashboard">Admin</a></li>
                         <li><a href="/about">About</a></li>
-                        <li><a href="/project">Login</a></li>
-                        <li><a href="/price">Register</a></li>
+                        
                         <li class="menu-has-children"><a href="">SD</a>
                         <ul>
                             <li><a href="/sd1">Kelas 1</a></li>
@@ -71,6 +71,16 @@
                             <li><a href="/soshum">SOSHUM</a></li>
                             <li><a href="/saintek">SAINTEK</a></li>
                         </ul>
+                        </li>
+                        <li class="menu-has-children"><a href="">User Management</a>
+                            <ul>
+                                @if (Auth::check())
+                                    <li><a href="{{route('user.logout')}}">Logout</a></li>
+                                @else
+                                    <li><a href="{{route('user.login')}}">Login</a></li>
+                                    <li><a href="{{route('user.signup')}}">SignUp</a></li>
+                                @endif
+                            </ul>
                         </li>
                     </ul>
                     </nav><!-- #nav-menu-container -->		    		

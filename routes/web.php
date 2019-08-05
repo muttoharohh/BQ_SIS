@@ -20,52 +20,51 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 });
-Route::get('/sd1', function () {
-    return view('sd1');
-});
-Route::get('/sd2', function () {
-    return view('sd2');
-});
-Route::get('/sd3', function () {
-    return view('sd3');
-});
-Route::get('/sd4', function () {
-    return view('sd4');
-});
-Route::get('/sd5', function () {
-    return view('sd5');
-});
-Route::get('/sd6', function () {
-    return view('sd6');
-});
-Route::get('/smp1', function () {
-    return view('smp1');
-});
-Route::get('/smp2', function () {
-    return view('smp2');
-});
-Route::get('/smp3', function () {
-    return view('smp3');
-});
-Route::get('/sma1', function () {
-    return view('sma1');
-});
-Route::get('/sma2', function () {
-    return view('sma2');
-});
-Route::get('/sma3', function () {
-    return view('sma3');
-});
-Route::get('/soshum', function () {
-    return view('soshum');
-});
-Route::get('/saintek', function () {
-    return view('saintek');
-});
 
-Route::get('/sd1', 'SdsatusController@index');
-Route::get('/sd2', 'SdduasController@index');
-Route::get('/sd3', 'SdtigasController@index');
-Route::get('/sd4', 'SdempatsController@index');
-Route::get('/sd5', 'SdlimasController@index');
-Route::get('/sd6', 'SdenamsController@index');
+Route::get('/signup',[
+    'uses' => 'UserController@getSignup',
+    'as' => 'user.signup',
+    'middleware' => 'guest'
+]);
+Route::post('/signup',[
+    'uses' => 'UserController@postSignup',
+    'as' => 'user.signup',
+    'middleware' => 'guest'
+]);
+Route::get('/login',[
+    'uses' => 'UserController@getLogin',
+    'as' => 'user.login',
+    'middleware' => 'guest'
+]);
+Route::post('/login',[
+    'uses' => 'UserController@postLogin',
+    'as' => 'user.login',
+    'middleware' => 'guest'
+]);
+Route::get('/dashboard', function(){
+    return view('admin.index');
+});
+Route::get('/register', function(){
+    return view('admin.register');
+});
+Route::get('/logout',[
+    'uses' => 'UserController@getLogout',
+    'as' => 'user.logout',
+    'middleware' => 'auth'
+]);
+
+
+Route::get('/sd1', ['uses' => 'SdsatusController@index', 'middleware' => 'auth']);
+Route::get('/sd2', ['uses' => 'SdduasController@index', 'middleware' => 'auth']);
+Route::get('/sd3', ['uses' => 'SdtigasController@index', 'middleware' => 'auth']);
+Route::get('/sd4', ['uses' => 'SdempatsController@index', 'middleware' => 'auth']);
+Route::get('/sd5', ['uses' => 'SdlimasController@index', 'middleware' => 'auth']);
+Route::get('/sd6', ['uses' => 'SdenamsController@index', 'middleware' => 'auth']);
+Route::get('/smp1', ['uses' => 'SmpsatusController@index', 'middleware' => 'auth']);
+Route::get('/smp2', ['uses' => 'SmpduasController@index', 'middleware' => 'auth']);
+Route::get('/smp3', ['uses' => 'SmptigasController@index', 'middleware' => 'auth']);
+Route::get('/sma1', ['uses' => 'SmasatusController@index', 'middleware' => 'auth']);
+Route::get('/sma2', ['uses' => 'SmaduasController@index', 'middleware' => 'auth']);
+Route::get('/sma3', ['uses' => 'SmatigasController@index', 'middleware' => 'auth']);
+Route::get('/soshum', ['uses' => 'SoshumsController@index', 'middleware' => 'auth']);
+Route::get('/saintek', ['uses' => 'SainteksController@index', 'middleware' => 'auth']);

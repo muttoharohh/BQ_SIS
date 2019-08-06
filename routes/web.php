@@ -31,6 +31,19 @@ Route::post('/signup',[
     'as' => 'user.signup',
     'middleware' => 'guest'
 ]);
+Route::get('/register',[
+    'uses' => 'UserController@getRegister',
+    'as' => 'register.admin',
+]);
+Route::post('/register',[
+    'uses' => 'UserController@postRegister',
+    'as' => 'register.admin',
+]);
+Route::get('/adminuser',[
+    'uses' => 'UserController@getUser',
+    'as' => 'admin.user',
+    'middleware' => 'auth'
+]);
 Route::get('/login',[
     'uses' => 'UserController@getLogin',
     'as' => 'user.login',
@@ -41,9 +54,21 @@ Route::post('/login',[
     'as' => 'user.login',
     'middleware' => 'guest'
 ]);
-Route::get('/dashboard', function(){
-    return view('admin.index');
-});
+Route::get('/loginadmin',[
+    'uses' => 'UserController@getLoginadmin',
+    'as' => 'admin.login',
+    'middleware' => 'guest'
+]);
+Route::post('/loginadmin',[
+    'uses' => 'UserController@postLoginadmin',
+    'as' => 'admin.login',
+    'middleware' => 'guest'
+]);
+Route::get('/dashboard',[
+    'uses' => 'DashboardController@getdashboard',
+    'as' => 'dashboard.admin',
+    'middleware' => 'auth'
+]);
 Route::get('/register', function(){
     return view('admin.register');
 });
@@ -52,7 +77,54 @@ Route::get('/logout',[
     'as' => 'user.logout',
     'middleware' => 'auth'
 ]);
+Route::get('/logoutadmin',[
+    'uses' => 'UserController@getLogoutadmin',
+    'as' => 'admin.logout',
+    'middleware' => 'auth'
+]);
 
+Route::get('/adminsd1',[
+    'uses' => 'SdsatusController@sdsatu_viewadmin',
+    'as' => 'admin.sd1',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsd1/create',[
+    'uses' => 'SdsatusController@create',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsd1/{id}/delete',[
+    'uses' => 'SdsatusController@delete',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsd1/{id}/edit',[
+    'uses' => 'SdsatusController@edit',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsd1/{id}/update',[
+    'uses' => 'SdsatusController@update',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsd2',[
+    'uses' => 'SdduasController@sddua_viewadmin',
+    'as' => 'admin.sd2',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsd2/create',[
+    'uses' => 'SdduasController@create',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsd2/{id}/delete',[
+    'uses' => 'SdduasController@delete',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsd2/{id}/edit',[
+    'uses' => 'SdduasController@edit',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsd2/{id}/update',[
+    'uses' => 'SdduasController@update',
+    'middleware' => 'auth'
+]);
 
 Route::get('/sd1', ['uses' => 'SdsatusController@index', 'middleware' => 'auth']);
 Route::get('/sd2', ['uses' => 'SdduasController@index', 'middleware' => 'auth']);

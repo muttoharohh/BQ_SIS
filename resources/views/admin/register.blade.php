@@ -5,51 +5,34 @@
         <div class="card card-register mx-auto mt-5">
           <div class="card-header">Register an Account</div>
           <div class="card-body">
-            <form>
-              <div class="form-group">
-                <div class="form-row">
-                  <div class="col-md-6">
-                    <div class="form-label-group">
-                      <input type="text" id="firstName" class="form-control" placeholder="First name" required="required" autofocus="autofocus">
-                      <label for="firstName">First name</label>
+            @if (Session::has('success'))
+                <div class="row text-center" style="justify-content: center">
+                    <div class="col-sm-12 col-md-offset-12 col-sm-offset-12">
+                        <div id="charge-message" class="alert alert-success">
+                            {{Session::get('success') }}
+                        </div>
                     </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-label-group">
-                      <input type="text" id="lastName" class="form-control" placeholder="Last name" required="required">
-                      <label for="lastName">Last name</label>
-                    </div>
-                  </div>
                 </div>
-              </div>
-              <div class="form-group">
-                <div class="form-label-group">
-                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required">
-                  <label for="inputEmail">Email address</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="form-row">
-                  <div class="col-md-6">
-                    <div class="form-label-group">
-                      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
-                      <label for="inputPassword">Password</label>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-label-group">
-                      <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm password" required="required">
-                      <label for="confirmPassword">Confirm password</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <a class="btn btn-primary btn-block" href="login.html">Register</a>
+            @endif
+            <form action="{{route('register.admin')}}" method="POST">
+              <div class="form-inline">
+                <label style="float: left" for="name" class="col-lg-2">Name</label>
+                <input style="text-align:left" type="text" name="name" id="name" class="form-control col-lg-9" placeholder="input your name">
+              </div><br>
+
+              <div class="form-inline">
+                  <label style="text-align:left" for="email" class="col-lg-2">E-mail</label>
+                  <input style="text-align:left" type="text" name="email" id="email" class="form-control col-lg-9" placeholder="input your email">
+              </div><br>
+
+              <div class="form-inline">
+                  <label style="text-align:left" for="password" class="col-lg-2">Password</label>
+                  <input style="text-align:left" type="password" name="password" id="password" class="form-control col-lg-9" placeholder="input your password">
+                </div><br>
+
+              <button type="submit" class="btn btn-primary">Register</button>
+              {{ csrf_field() }}
             </form>
-            <div class="text-center">
-              <a class="d-block small mt-3" href="login.html">Login Page</a>
-              <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
-            </div>
           </div>
         </div>
       </div>

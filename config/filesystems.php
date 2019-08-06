@@ -55,6 +55,35 @@ return [
             'visibility' => 'public',
         ],
 
+        'sd1video' => [
+            'driver' => 'local',
+            'root' => public_path() . '/upload/video/sd1',
+        ],
+        'sd1dokumen' => [
+            'driver' => 'local',
+            'root' => public_path() . '/upload/dokumen/sd1',
+        ],
+        'sd2dokumen' => [
+            'driver' => 'local',
+            'root' => public_path() . '/upload/dokumen/sd2',
+        ],
+        'sd3dokumen' => [
+            'driver' => 'local',
+            'root' => public_path() . '/upload/dokumen/sd3',
+        ],
+        'sd4dokumen' => [
+            'driver' => 'local',
+            'root' => public_path() . '/upload/dokumen/sd4',
+        ],
+        'sd5dokumen' => [
+            'driver' => 'local',
+            'root' => public_path() . '/upload/dokumen/sd5',
+        ],
+        'sd6dokumen' => [
+            'driver' => 'local',
+            'root' => public_path() . '/upload/dokumen/sd6',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

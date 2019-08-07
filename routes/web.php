@@ -155,7 +155,7 @@ Route::post('/adminsd3/{id}/update',[
 
 Route::get('/adminsd4',[
     'uses' => 'SdempatsController@sdempat_viewadmin',
-    'as' => 'admin.sd3',
+    'as' => 'admin.sd4',
     'middleware' => 'auth'
 ]);
 Route::post('/adminsd4/create',[

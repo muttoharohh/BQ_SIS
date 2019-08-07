@@ -17,9 +17,9 @@ class SmasatusController extends Controller
 
 
     
-    public function Smasatu_viewadmin(){
+    public function smasatu_viewadmin(){
         $smasatus = \App\Smasatu::all();
-        return view('admin.sma.sma1crud', compact('Smasatus'));
+        return view('admin.sma.sma1crud', compact('smasatus'));
     }
 
     public function delete($id){
@@ -30,7 +30,7 @@ class SmasatusController extends Controller
 
     public function edit($id){
         $smasatus = \App\Smasatu::find($id);
-        return view('admin.sma.sma1edit', compact('Smasatus'));
+        return view('admin.sma.sma1edit', compact('smasatus'));
     }
 
     public function update(Request $request, $id){
@@ -66,7 +66,7 @@ class SmasatusController extends Controller
         $cover = $request->file('dokumen');
         if($cover != ""){
             $extension = $cover->getClientOriginalName();
-            Storage::disk('sd2dokumen')->put($extension, File::get($cover));
+            Storage::disk('sma1dokumen')->put($extension, File::get($cover));
             $smasatus->dokumen = 'upload/dokumen/sma1/'.$extension;
         }
 

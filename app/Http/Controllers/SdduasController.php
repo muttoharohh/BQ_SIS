@@ -64,7 +64,7 @@ class SdduasController extends Controller
         if($cover != ""){
             $extension = $cover->getClientOriginalName();
             Storage::disk('sd2dokumen')->put($extension, File::get($cover));
-            $sdsatus->dokumen = 'upload/dokumen/sd2/'.$extension;
+            $sdduas->dokumen = 'upload/dokumen/sd2/'.$extension;
         }
 
         $sdduas = new \App\Sddua();

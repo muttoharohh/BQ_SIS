@@ -63,7 +63,7 @@ class SdempatsController extends Controller
         if($cover != ""){
             $extension = $cover->getClientOriginalName();
             Storage::disk('sd4dokumen')->put($extension, File::get($cover));
-            $sdsatus->dokumen = 'upload/dokumen/sd4/'.$extension;
+            $sdempats->dokumen = 'upload/dokumen/sd4/'.$extension;
         }
 
         $sdempats = new \App\Sdempat();

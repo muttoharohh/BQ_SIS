@@ -63,7 +63,7 @@ class SdlimasController extends Controller
         if($cover != ""){
             $extension = $cover->getClientOriginalName();
             Storage::disk('sd5dokumen')->put($extension, File::get($cover));
-            $sdsatus->dokumen = 'upload/dokumen/sd5/'.$extension;
+            $sdlimas->dokumen = 'upload/dokumen/sd5/'.$extension;
         }
 
         $sdlimas = new \App\Sdlima();

@@ -61,9 +61,11 @@ class SdsatusController extends Controller
         // $cover = $request->file('videopel');
         // $extension = $cover->getClientOriginalName();
         // Storage::disk('sd1video')->put($extension, File::get($cover));
-        $cover1 = $request->file('dokumen');
-        $extension1 = $cover1->getClientOriginalName();
-        Storage::disk('sd1dokumen')->put($extension1, File::get($cover1));
+        if($cover != ""){
+            $extension = $cover->getClientOriginalName();
+            Storage::disk('sd1dokumen')->put($extension, File::get($cover));
+            $sdsatus->dokumen = 'upload/dokumen/sd1/'.$extension;
+        }
 
         $sdsatus = new \App\Sdsatu();
         $sdsatus->mapel = $request->mapel;

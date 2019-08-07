@@ -60,9 +60,11 @@ class SdtigasController extends Controller
         // $cover = $request->file('videopel');
         // $extension = $cover->getClientOriginalName();
         // Storage::disk('sd1video')->put($extension, File::get($cover));
-        $cover1 = $request->file('dokumen');
-        $extension1 = $cover1->getClientOriginalName();
-        Storage::disk('sd3dokumen')->put($extension1, File::get($cover1));
+        if($cover != ""){
+            $extension = $cover->getClientOriginalName();
+            Storage::disk('sd3dokumen')->put($extension, File::get($cover));
+            $sdtigas->dokumen = 'upload/dokumen/sd3/'.$extension;
+        }
 
         $sdtigas = new \App\Sdtiga();
         $sdtigas->mapel = $request->mapel;

@@ -65,7 +65,7 @@
                                         </tr>
                                     </thead>
                                         <tbody>
-                                                @foreach ($sdduas as $sddua)
+                                                @foreach ($smasatus as $smasatu)
                                                 <tr>
                                                 <td>{{$smasatu->mapel}}</td>
                                                 <td>{{$smasatu->judul}}</td>

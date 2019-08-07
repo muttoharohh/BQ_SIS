@@ -362,6 +362,28 @@ Route::post('/adminsma3/{id}/update',[
 ]);
 
 
+Route::get('/adminsaintek',[
+    'uses' => 'SainteksController@saintek_viewadmin',
+    'as' => 'admin.saintek',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsaintek/create',[
+    'uses' => 'SainteksController@create',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsaintek/{id}/delete',[
+    'uses' => 'SainteksController@delete',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsaintek/{id}/edit',[
+    'uses' => 'SainteksController@edit',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsaintek/{id}/update',[
+    'uses' => 'SainteksController@update',
+    'middleware' => 'auth'
+]);
+
 
 Route::get('/sd1', ['uses' => 'SdsatusController@index', 'middleware' => 'auth']);
 Route::get('/sd2', ['uses' => 'SdduasController@index', 'middleware' => 'auth']);

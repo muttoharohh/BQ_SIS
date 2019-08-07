@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Storage;
+use File;
+use Auth;
 
 class SmatigasController extends Controller
 {

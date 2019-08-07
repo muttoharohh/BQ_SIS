@@ -7,7 +7,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h2 class="title-1 m-b-10">Data Pelajaran SD Kelas 2</h2>
+                            <h2 class="title-1 m-b-10">Data Pelajaran SD Kelas 4</h2>
                             <div class="noti__item js-item-menu">
                                 <i class="fa fa-plus-square"></i>
                                 <div class="mess-dropdown js-dropdown">

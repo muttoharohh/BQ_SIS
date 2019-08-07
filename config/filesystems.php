@@ -83,6 +83,30 @@ return [
             'driver' => 'local',
             'root' => public_path() . '/upload/dokumen/sd6',
         ],
+        'smp1dokumen' => [
+            'driver' => 'local',
+            'root' => public_path() . '/upload/video/smp1',
+        ],
+        'smp2dokumen' => [
+            'driver' => 'local',
+            'root' => public_path() . '/upload/dokumen/smp2',
+        ],
+        'smp3dokumen' => [
+            'driver' => 'local',
+            'root' => public_path() . '/upload/dokumen/smp3',
+        ],
+        'sma1dokumen' => [
+            'driver' => 'local',
+            'root' => public_path() . '/upload/video/sma1',
+        ],
+        'sma2dokumen' => [
+            'driver' => 'local',
+            'root' => public_path() . '/upload/dokumen/sma2',
+        ],
+        'sma3dokumen' => [
+            'driver' => 'local',
+            'root' => public_path() . '/upload/dokumen/sma3',
+        ],
 
         's3' => [
             'driver' => 's3',

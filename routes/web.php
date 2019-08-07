@@ -222,6 +222,30 @@ Route::post('/adminsd6/{id}/update',[
 ]);
 
 
+
+Route::get('/adminsmp1',[
+    'uses' => 'SmpsatusController@smpsatu_viewadmin',
+    'as' => 'admin.smp1',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsmp1/create',[
+    'uses' => 'SmpsatusController@create',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsmp1/{id}/delete',[
+    'uses' => 'SmpsatussController@delete',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsmp1/{id}/edit',[
+    'uses' => 'SmpsatussController@edit',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsmp1/{id}/update',[
+    'uses' => 'SmpsatusController@update',
+    'middleware' => 'auth'
+]);
+
+
 Route::get('/sd1', ['uses' => 'SdsatusController@index', 'middleware' => 'auth']);
 Route::get('/sd2', ['uses' => 'SdduasController@index', 'middleware' => 'auth']);
 Route::get('/sd3', ['uses' => 'SdtigasController@index', 'middleware' => 'auth']);

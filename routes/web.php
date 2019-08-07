@@ -199,6 +199,29 @@ Route::post('/adminsd5/{id}/update',[
 ]);
 
 
+Route::get('/adminsd6',[
+    'uses' => 'SdenamsController@sdenam_viewadmin',
+    'as' => 'admin.sd6',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsd6/create',[
+    'uses' => 'SdenamsController@create',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsd6/{id}/delete',[
+    'uses' => 'SdenamsController@delete',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsd6/{id}/edit',[
+    'uses' => 'SdenamsController@edit',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsd6/{id}/update',[
+    'uses' => 'SdenamsController@update',
+    'middleware' => 'auth'
+]);
+
+
 Route::get('/sd1', ['uses' => 'SdsatusController@index', 'middleware' => 'auth']);
 Route::get('/sd2', ['uses' => 'SdduasController@index', 'middleware' => 'auth']);
 Route::get('/sd3', ['uses' => 'SdtigasController@index', 'middleware' => 'auth']);

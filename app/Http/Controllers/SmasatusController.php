@@ -23,8 +23,8 @@ class SmasatusController extends Controller
     }
 
     public function delete($id){
-        $smasatus->delete($id);
         $smasatus = \App\Smasatu::find($id);
+        $smasatus->delete($id);
         return redirect()->route('admin.sma1');
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Storage;
 use File;
+use Auth;
 use Illuminate\Http\Request;
 
 class SdsatusController extends Controller

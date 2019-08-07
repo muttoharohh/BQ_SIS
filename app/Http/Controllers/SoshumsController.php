@@ -16,7 +16,7 @@ class SoshumsController extends Controller
         return view('soshum', compact('soshums'));
     }
 
-    public function sddua_viewadmin(){
+    public function soshum_viewadmin(){
         $sainteks = \App\Saintek::all();
         return view('admin.sbmptn.soshumcrud', compact('sainteks'));
     }

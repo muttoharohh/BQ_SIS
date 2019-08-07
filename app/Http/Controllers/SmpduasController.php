@@ -17,7 +17,7 @@ class SmpduasController extends Controller
 
 
     
-    public function sddua_viewadmin(){
+    public function smpdua_viewadmin(){
         $smpduas = \App\Smpdua::all();
         return view('admin.smp.smp2crud', compact('smpduas'));
     }

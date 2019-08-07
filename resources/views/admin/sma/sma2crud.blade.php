@@ -67,10 +67,10 @@
                                         <tbody>
                                                 @foreach ($smaduas as $smadua)
                                                 <tr>
-                                                <td>{{$smaduas->mapel}}</td>
-                                                <td>{{$smaduas->judul}}</td>
-                                                <td>{{$smaduas->videopel}}</td>
-                                                <td>{{$smaduas->dokumen}}</td>
+                                                <td>{{$smadua->mapel}}</td>
+                                                <td>{{$smadua->judul}}</td>
+                                                <td>{{$smadua->videopel}}</td>
+                                                <td>{{$smadua->dokumen}}</td>
     
                                                 <td>
                                                     <a href="/adminsma2/{{$smadua->id}}/edit" class="btn btn-warning btn-sm">Edit</a>

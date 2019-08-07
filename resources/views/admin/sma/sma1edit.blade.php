@@ -8,7 +8,7 @@
                         <div class="col-12">
                             <h2>Edit Data</h2>
                             <div class="col-lg-12">
-                                <form action="/adminsma1/{{$sdduas-> id}}/update" method="post" enctype="multipart/form-data">
+                                <form action="/adminsma1/{{$smasatus-> id}}/update" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="form-group">
                                         <label for="exampleInputEmail">Mata Pelajaran</label>

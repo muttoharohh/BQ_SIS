@@ -71,7 +71,6 @@ class SdduasController extends Controller
         $sdduas->mapel = $request->mapel;
         $sdduas->judul = $request->judul;
         $sdduas->videopel = 'upload/video/sd2/'.$request->videopel;
-        $sdduas->dokumen = 'upload/dokumen/sd2/'.$extension;
 
         $sdduas->save();
 

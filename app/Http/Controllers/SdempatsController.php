@@ -70,7 +70,6 @@ class SdempatsController extends Controller
         $sdempats->mapel = $request->mapel;
         $sdempats->judul = $request->judul;
         $sdempats->videopel = 'upload/video/sd4/'.$request->videopel;
-        $sdempats->dokumen = 'upload/dokumen/sd4/'.$extension;
 
         $sdempats->save();
 

@@ -70,7 +70,6 @@ class SdlimasController extends Controller
         $sdlimas->mapel = $request->mapel;
         $sdlimas->judul = $request->judul;
         $sdlimas->videopel = 'upload/video/sd5/'.$request->videopel;
-        $sdlimas->dokumen = 'upload/dokumen/sd5/'.$extension;
 
         $sdlimas->save();
 

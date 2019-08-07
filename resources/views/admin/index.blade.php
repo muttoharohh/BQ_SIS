@@ -157,7 +157,7 @@
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">Kelas:</h6>
           <a class="dropdown-item" href="{{route('admin.saintek')}}">Saintex</a>
-          <a class="dropdown-item" href="login.html">Soshum</a>
+          <a class="dropdown-item" href="{{route('admin.soshum')}}">Soshum</a>
         </div>
       </li>
       

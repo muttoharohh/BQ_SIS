@@ -385,6 +385,29 @@ Route::post('/adminsaintek/{id}/update',[
 ]);
 
 
+Route::get('/adminsoshum',[
+    'uses' => 'SoshumsController@soshum_viewadmin',
+    'as' => 'admin.soshum',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsoshum/create',[
+    'uses' => 'SoshumsController@create',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsoshum/{id}/delete',[
+    'uses' => 'SoshumsController@delete',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsoshum/{id}/edit',[
+    'uses' => 'SoshumsController@edit',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsoshum/{id}/update',[
+    'uses' => 'SoshumsController@update',
+    'middleware' => 'auth'
+]);
+
+
 Route::get('/sd1', ['uses' => 'SdsatusController@index', 'middleware' => 'auth']);
 Route::get('/sd2', ['uses' => 'SdduasController@index', 'middleware' => 'auth']);
 Route::get('/sd3', ['uses' => 'SdtigasController@index', 'middleware' => 'auth']);

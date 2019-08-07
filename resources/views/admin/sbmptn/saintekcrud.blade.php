@@ -65,18 +65,18 @@
                                         </tr>
                                     </thead>
                                         <tbody>
-                                                @foreach ($sbmptnsainteks as $sbmptnsaintek)
+                                                @foreach ($sainteks as $saintek)
                                                 <tr>
-                                                <td>{{$sbmptnsaintek->mapel}}</td>
-                                                <td>{{$sbmptnsaintek->judul}}</td>
-                                                <td>{{$sbmptnsaintek->videopel}}</td>
-                                                <td>{{$sbmptnsaintek->dokumen}}</td>
+                                                <td>{{$saintek->mapel}}</td>
+                                                <td>{{$saintek->judul}}</td>
+                                                <td>{{$saintek->videopel}}</td>
+                                                <td>{{$saintek->dokumen}}</td>
     
                                                 <td>
-                                                    <a href="/adminsbmptnsaintek/{{$sbmptnsaintek->id}}/edit" class="btn btn-warning btn-sm">Edit</a>
+                                                    <a href="/adminsaintek/{{$saintek->id}}/edit" class="btn btn-warning btn-sm">Edit</a>
                                                 </td>
                                                 <td>
-                                                    <a href="/adminsbmptnsaintek/{{$sbmptnsaintek->id}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Hapus Data ?')">Delete</a>
+                                                    <a href="/adminsaintek/{{$saintek->id}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Hapus Data ?')">Delete</a>
                                                 </td>
                                                 <tr>
                                             @endforeach

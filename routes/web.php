@@ -270,6 +270,29 @@ Route::post('/adminsmp2/{id}/update',[
 ]);
 
 
+Route::get('/adminsmp3',[
+    'uses' => 'SmptigasController@smptiga_viewadmin',
+    'as' => 'admin.smp3',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsmp3/create',[
+    'uses' => 'SmptigasController@create',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsmp3/{id}/delete',[
+    'uses' => 'SmptigasController@delete',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsmp3/{id}/edit',[
+    'uses' => 'SmptigasController@edit',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsmp3/{id}/update',[
+    'uses' => 'SmptigasController@update',
+    'middleware' => 'auth'
+]);
+
+
 
 Route::get('/sd1', ['uses' => 'SdsatusController@index', 'middleware' => 'auth']);
 Route::get('/sd2', ['uses' => 'SdduasController@index', 'middleware' => 'auth']);

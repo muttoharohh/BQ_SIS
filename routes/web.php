@@ -316,6 +316,29 @@ Route::post('/adminsma1/{id}/update',[
 ]);
 
 
+Route::get('/adminsma2',[
+    'uses' => 'SmaduasController@smadua_viewadmin',
+    'as' => 'admin.sma2',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsma2/create',[
+    'uses' => 'SmaduasController@create',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsma2/{id}/delete',[
+    'uses' => 'SmaduasController@delete',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsma2/{id}/edit',[
+    'uses' => 'SmaduasController@edit',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsma2/{id}/update',[
+    'uses' => 'SmaduasController@update',
+    'middleware' => 'auth'
+]);
+
+
 
 Route::get('/sd1', ['uses' => 'SdsatusController@index', 'middleware' => 'auth']);
 Route::get('/sd2', ['uses' => 'SdduasController@index', 'middleware' => 'auth']);

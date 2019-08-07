@@ -16,7 +16,7 @@ class SainteksController extends Controller
         return view('saintek', compact('sainteks'));
     }
 
-    public function sbmptnsaintek_viewadmin(){
+    public function saintek_viewadmin(){
         $sainteks = \App\Saintek::all();
         return view('admin.sbmptn.saintekcrud', compact('sainteks'));
     }

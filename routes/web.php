@@ -246,6 +246,31 @@ Route::post('/adminsmp1/{id}/update',[
 ]);
 
 
+
+Route::get('/adminsmp2',[
+    'uses' => 'SmpduasController@smpdua_viewadmin',
+    'as' => 'admin.smp2',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsmp2/create',[
+    'uses' => 'SmpduasController@create',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsmp2/{id}/delete',[
+    'uses' => 'SmpduasController@delete',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsmp2/{id}/edit',[
+    'uses' => 'SmpduasController@edit',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsmp2/{id}/update',[
+    'uses' => 'SmpduasController@update',
+    'middleware' => 'auth'
+]);
+
+
+
 Route::get('/sd1', ['uses' => 'SdsatusController@index', 'middleware' => 'auth']);
 Route::get('/sd2', ['uses' => 'SdduasController@index', 'middleware' => 'auth']);
 Route::get('/sd3', ['uses' => 'SdtigasController@index', 'middleware' => 'auth']);

@@ -133,7 +133,7 @@
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">Kelas:</h6>
           <a class="dropdown-item" href="{{route('admin.smp1')}}">1 smp</a>
-          <a class="dropdown-item" href="login.html">2 smp</a>
+          <a class="dropdown-item" href="{{route('admin.smp2')}}">2 smp</a>
           <a class="dropdown-item" href="login.html">3 smp</a>
         </div>
       </li>

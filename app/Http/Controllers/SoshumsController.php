@@ -17,37 +17,37 @@ class SoshumsController extends Controller
     }
 
     public function soshum_viewadmin(){
-        $sainteks = \App\Saintek::all();
-        return view('admin.sbmptn.soshumcrud', compact('sainteks'));
+        $soshums = \App\Soshum::all();
+        return view('admin.sbmptn.soshumcrud', compact('soshums'));
     }
 
     public function delete($id){
-        $sainteks = \App\Saintek::find($id);
-        $sainteks->delete($id);
+        $soshums = \App\Soshum::find($id);
+        $soshums->delete($id);
         return redirect()->route('admin.soshum');
     }
 
     public function edit($id){
-        $sainteks = \App\Saintek::find($id);
-        return view('admin.sbmptn.soshumedit', compact('sainteks'));
+        $soshums = \App\Soshum::find($id);
+        return view('admin.sbmptn.soshumedit', compact('soshums'));
     }
 
     public function update(Request $request, $id){
-        $sainteks = \App\Saintek::find($id);
+        $soshums = \App\Soshum::find($id);
 
         $cover = $request->file('dokumen');
         if($cover != ""){
             $extension = $cover->getClientOriginalName();
             Storage::disk('soshumdokumen')->put($extension, File::get($cover));
-            $sainteks->dokumen = 'upload/dokumen/soshum/'.$extension;
+            $soshums->dokumen = 'upload/dokumen/soshum/'.$extension;
         }
-        $sainteks->mapel = $request->mapel;
-        $sainteks->judul = $request->judul;
-        $sainteks->videopel = 'upload/video/soshum/'.$request->videopel;
-        $sainteks->dokumen = 'upload/dokumen/soshum/'.$extension;
-        $sainteks->update();
+        $soshums->mapel = $request->mapel;
+        $soshums->judul = $request->judul;
+        $soshums->videopel = 'upload/video/soshum/'.$request->videopel;
+        $soshums->dokumen = 'upload/dokumen/soshum/'.$extension;
+        $soshums->update();
 
-        return redirect('/adminsaintek');
+        return redirect('/adminsoshum');
     }
 
     public function create(Request $request){
@@ -61,19 +61,19 @@ class SoshumsController extends Controller
         // $cover = $request->file('videopel');
         // $extension = $cover->getClientOriginalName();
         // Storage::disk('sd1video')->put($extension, File::get($cover));
-        $sainteks = new \App\Saintek();
+        $soshums = new \App\Soshum();
         $cover = $request->file('dokumen');
         if($cover != ""){
             $extension = $cover->getClientOriginalName();
             Storage::disk('soshumdokumen')->put($extension, File::get($cover));
-            $sainteks->dokumen = 'upload/dokumen/soshum/'.$extension;
+            $soshums->dokumen = 'upload/dokumen/soshum/'.$extension;
         }
 
-        $sainteks->mapel = $request->mapel;
-        $sainteks->judul = $request->judul;
-        $sainteks->videopel = 'upload/video/soshum/'.$request->videopel;
+        $soshums->mapel = $request->mapel;
+        $soshums->judul = $request->judul;
+        $soshums->videopel = 'upload/video/soshum/'.$request->videopel;
 
-        $sainteks->save();
+        $soshums->save();
 
         return redirect()->route('admin.soshum');
     }

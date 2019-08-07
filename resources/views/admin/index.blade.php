@@ -121,7 +121,7 @@
           <a class="dropdown-item" href="{{route('admin.sd2')}}">2 sd</a>
           <a class="dropdown-item" href="{{route('admin.sd3')}}">3 sd</a>
           <a class="dropdown-item" href="{{route('admin.sd4')}}">4 sd</a>
-          <a class="dropdown-item" href="login.html">5 sd</a>
+          <a class="dropdown-item" href="{{route('admin.sd5')}}">5 sd</a>
           <a class="dropdown-item" href="login.html">6 sd</a>
         </div>
       </li>

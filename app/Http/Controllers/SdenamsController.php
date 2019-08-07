@@ -13,35 +13,35 @@ class SdenamsController extends Controller
         return view('sd6', compact('sdenams'));
     }
     public function sdenam_viewadmin(){
-        $enams = \App\Sdenam::all();
+        $sdenams = \App\Sdenam::all();
         return view('admin.sd.sd6crud', compact('sdenams'));
     }
 
     public function delete($id){
-        $enams = \App\Sdenam::find($id);
-        $enams->delete($id);
+        $sdenams = \App\Sdenam::find($id);
+        $sdenams->delete($id);
         return redirect()->route('admin.sd6');
     }
 
     public function edit($id){
-        $enams = \App\Sdenam::find($id);
+        $sdenams = \App\Sdenam::find($id);
         return view('admin.sd.sd6edit', compact('sdenams'));
     }
 
     public function update(Request $request, $id){
-        $enams = \App\Sdenam::find($id);
+        $sdenams = \App\Sdenam::find($id);
 
         $cover = $request->file('dokumen');
         if($cover != ""){
             $extension = $cover->getClientOriginalName();
             Storage::disk('sd6dokumen')->put($extension, File::get($cover));
-            $enams->dokumen = 'upload/dokumen/sd6/'.$extension;
+            $sdenams->dokumen = 'upload/dokumen/sd6/'.$extension;
         }
-        $enams->mapel = $request->mapel;
-        $enams->judul = $request->judul;
-        $enams->videopel = 'upload/video/sd6/'.$request->videopel;
-        $enams->dokumen = 'upload/dokumen/sd6/'.$extension;
-        $enams->update();
+        $sdenams->mapel = $request->mapel;
+        $sdenams->judul = $request->judul;
+        $sdenams->videopel = 'upload/video/sd6/'.$request->videopel;
+        $sdenams->dokumen = 'upload/dokumen/sd6/'.$extension;
+        $sdenams->update();
 
         return redirect('/adminsd6');
     }
@@ -57,19 +57,19 @@ class SdenamsController extends Controller
         // $cover = $request->file('videopel');
         // $extension = $cover->getClientOriginalName();
         // Storage::disk('sd1video')->put($extension, File::get($cover));
-        $enams = new \App\Sdenam();
+        $sdenams = new \App\Sdenam();
         $cover = $request->file('dokumen');
         if($cover != ""){
             $extension = $cover->getClientOriginalName();
             Storage::disk('sd6dokumen')->put($extension, File::get($cover));
-            $enams->dokumen = 'upload/dokumen/sd6/'.$extension;
+            $sdenams->dokumen = 'upload/dokumen/sd6/'.$extension;
         }
 
-        $enams->mapel = $request->mapel;
-        $enams->judul = $request->judul;
-        $enams->videopel = 'upload/video/sd6/'.$request->videopel;
+        $sdenams->mapel = $request->mapel;
+        $sdenams->judul = $request->judul;
+        $sdenams->videopel = 'upload/video/sd6/'.$request->videopel;
 
-        $enams->save();
+        $sdenams->save();
 
         return redirect()->route('admin.sd6');
     }

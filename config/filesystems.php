@@ -107,6 +107,14 @@ return [
             'driver' => 'local',
             'root' => public_path() . '/upload/dokumen/sma3',
         ],
+        'saintek' => [
+            'driver' => 'local',
+            'root' => public_path() . '/upload/dokumen/saintek',
+        ],
+        'soshum' => [
+            'driver' => 'local',
+            'root' => public_path() . '/upload/dokumen/soshum',
+        ],
 
         's3' => [
             'driver' => 's3',

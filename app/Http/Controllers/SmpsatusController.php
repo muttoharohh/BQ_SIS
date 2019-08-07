@@ -17,7 +17,7 @@ class SmpsatusController extends Controller
 
 
     
-    public function smpsatus_viewadmin(){
+    public function smpsatu_viewadmin(){
         $smpsatus = \App\Smpsatu::all();
         return view('admin.smp.smp1crud', compact('smpsatus'));
     }

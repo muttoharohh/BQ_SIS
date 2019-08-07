@@ -41,7 +41,8 @@ class SdempatsController extends Controller
         }
         $sdempats->mapel = $request->mapel;
         $sdempats->judul = $request->judul;
-        $sdempats->videopel = $request->videopel;
+        $sdempats->videopel = 'upload/video/sd4/'.$request->videopel;
+        $sdempats->dokumen = 'upload/dokumen/sd4/'.$extension;
         $sdempats->update();
 
         return redirect('/adminsd4');

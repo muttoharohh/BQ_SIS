@@ -59,6 +59,7 @@ class SdempatsController extends Controller
         // $cover = $request->file('videopel');
         // $extension = $cover->getClientOriginalName();
         // Storage::disk('sd1video')->put($extension, File::get($cover));
+        $sdempats = new \App\Sdempat();
         $cover = $request->file('dokumen');
         if($cover != ""){
             $extension = $cover->getClientOriginalName();
@@ -66,7 +67,6 @@ class SdempatsController extends Controller
             $sdempats->dokumen = 'upload/dokumen/sd4/'.$extension;
         }
 
-        $sdempats = new \App\Sdempat();
         $sdempats->mapel = $request->mapel;
         $sdempats->judul = $request->judul;
         $sdempats->videopel = 'upload/video/sd4/'.$request->videopel;

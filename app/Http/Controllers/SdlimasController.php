@@ -59,6 +59,7 @@ class SdlimasController extends Controller
         // $cover = $request->file('videopel');
         // $extension = $cover->getClientOriginalName();
         // Storage::disk('sd1video')->put($extension, File::get($cover));
+        $sdlimas = new \App\Sdlima();
         $cover = $request->file('dokumen');
         if($cover != ""){
             $extension = $cover->getClientOriginalName();
@@ -66,7 +67,6 @@ class SdlimasController extends Controller
             $sdlimas->dokumen = 'upload/dokumen/sd5/'.$extension;
         }
 
-        $sdlimas = new \App\Sdlima();
         $sdlimas->mapel = $request->mapel;
         $sdlimas->judul = $request->judul;
         $sdlimas->videopel = 'upload/video/sd5/'.$request->videopel;

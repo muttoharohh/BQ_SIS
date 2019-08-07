@@ -233,11 +233,11 @@ Route::post('/adminsmp1/create',[
     'middleware' => 'auth'
 ]);
 Route::get('/adminsmp1/{id}/delete',[
-    'uses' => 'SmpsatussController@delete',
+    'uses' => 'SmpsatusController@delete',
     'middleware' => 'auth'
 ]);
 Route::get('/adminsmp1/{id}/edit',[
-    'uses' => 'SmpsatussController@edit',
+    'uses' => 'SmpsatusController@edit',
     'middleware' => 'auth'
 ]);
 Route::post('/adminsmp1/{id}/update',[

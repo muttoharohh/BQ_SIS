@@ -295,7 +295,7 @@ Route::post('/adminsmp3/{id}/update',[
 
 Route::get('/adminsma1',[
     'uses' => 'SmasatusController@smasatu_viewadmin',
-    'as' => 'admin.smp3',
+    'as' => 'admin.sma1',
     'middleware' => 'auth'
 ]);
 Route::post('/adminsma1/create',[
@@ -311,7 +311,7 @@ Route::get('/adminsma1/{id}/edit',[
     'middleware' => 'auth'
 ]);
 Route::post('/adminsma1/{id}/update',[
-    'uses' => 'SmptigasController@update',
+    'uses' => 'SmasatusController@update',
     'middleware' => 'auth'
 ]);
 

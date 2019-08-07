@@ -339,6 +339,29 @@ Route::post('/adminsma2/{id}/update',[
 ]);
 
 
+Route::get('/adminsma3',[
+    'uses' => 'SmatigasController@smatiga_viewadmin',
+    'as' => 'admin.sma3',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsma3/create',[
+    'uses' => 'SmatigasController@create',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsma3/{id}/delete',[
+    'uses' => 'SmatigasController@delete',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsma3/{id}/edit',[
+    'uses' => 'SmatigasController@edit',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsma3/{id}/update',[
+    'uses' => 'SmatigasController@update',
+    'middleware' => 'auth'
+]);
+
+
 
 Route::get('/sd1', ['uses' => 'SdsatusController@index', 'middleware' => 'auth']);
 Route::get('/sd2', ['uses' => 'SdduasController@index', 'middleware' => 'auth']);

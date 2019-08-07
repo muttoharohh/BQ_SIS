@@ -144,7 +144,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">Kelas:</h6>
-          <a class="dropdown-item" href="login.html">1 sma</a>
+          <a class="dropdown-item" href="{{route('admin.sma1')}}">1 sma</a>
           <a class="dropdown-item" href="login.html">2 sma</a>
           <a class="dropdown-item" href="login.html">3 sma</a>
         </div>

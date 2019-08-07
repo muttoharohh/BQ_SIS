@@ -293,6 +293,29 @@ Route::post('/adminsmp3/{id}/update',[
 ]);
 
 
+Route::get('/adminsma1',[
+    'uses' => 'SmasatusController@smasatu_viewadmin',
+    'as' => 'admin.smp3',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsma1/create',[
+    'uses' => 'SmasatusController@create',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsma1/{id}/delete',[
+    'uses' => 'SmasatusController@delete',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsma1/{id}/edit',[
+    'uses' => 'SmasatusController@edit',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsma1/{id}/update',[
+    'uses' => 'SmptigasController@update',
+    'middleware' => 'auth'
+]);
+
+
 
 Route::get('/sd1', ['uses' => 'SdsatusController@index', 'middleware' => 'auth']);
 Route::get('/sd2', ['uses' => 'SdduasController@index', 'middleware' => 'auth']);

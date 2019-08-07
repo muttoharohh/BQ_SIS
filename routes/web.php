@@ -83,6 +83,7 @@ Route::get('/logoutadmin',[
     'middleware' => 'auth'
 ]);
 
+
 Route::get('/adminsd1',[
     'uses' => 'SdsatusController@sdsatu_viewadmin',
     'as' => 'admin.sd1',
@@ -104,6 +105,8 @@ Route::post('/adminsd1/{id}/update',[
     'uses' => 'SdsatusController@update',
     'middleware' => 'auth'
 ]);
+
+
 Route::get('/adminsd2',[
     'uses' => 'SdduasController@sddua_viewadmin',
     'as' => 'admin.sd2',
@@ -125,6 +128,30 @@ Route::post('/adminsd2/{id}/update',[
     'uses' => 'SdduasController@update',
     'middleware' => 'auth'
 ]);
+
+
+Route::get('/adminsd3',[
+    'uses' => 'SdtigasController@sdtiga_viewadmin',
+    'as' => 'admin.sd3',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsd3/create',[
+    'uses' => 'SdtigasController@create',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsd3/{id}/delete',[
+    'uses' => 'SdtigasController@delete',
+    'middleware' => 'auth'
+]);
+Route::get('/adminsd3/{id}/edit',[
+    'uses' => 'SdtigasController@edit',
+    'middleware' => 'auth'
+]);
+Route::post('/adminsd3/{id}/update',[
+    'uses' => 'SdtigasController@update',
+    'middleware' => 'auth'
+]);
+
 
 Route::get('/sd1', ['uses' => 'SdsatusController@index', 'middleware' => 'auth']);
 Route::get('/sd2', ['uses' => 'SdduasController@index', 'middleware' => 'auth']);

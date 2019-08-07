@@ -57,15 +57,18 @@ class SdduasController extends Controller
         // $cover = $request->file('videopel');
         // $extension = $cover->getClientOriginalName();
         // Storage::disk('sd1video')->put($extension, File::get($cover));
-        $cover1 = $request->file('dokumen');
-        $extension1 = $cover1->getClientOriginalName();
-        Storage::disk('sd2dokumen')->put($extension1, File::get($cover1));
+        $cover = $request->file('dokumen');
+        if($cover != ""){
+            $extension = $cover->getClientOriginalName();
+            Storage::disk('sd2dokumen')->put($extension, File::get($cover));
+            $sdsatus->dokumen = 'upload/dokumen/sd2/'.$extension;
+        }
 
         $sdduas = new \App\Sddua();
         $sdduas->mapel = $request->mapel;
         $sdduas->judul = $request->judul;
         $sdduas->videopel = 'upload/video/sd2/'.$request->videopel;
-        $sdduas->dokumen = 'upload/dokumen/sd2/'.$extension1;
+        $sdduas->dokumen = 'upload/dokumen/sd2/'.$extension;
 
         $sdduas->save();
 

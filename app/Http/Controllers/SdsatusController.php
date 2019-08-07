@@ -41,7 +41,9 @@ class SdsatusController extends Controller
         }
         $sdsatus->mapel = $request->mapel;
         $sdsatus->judul = $request->judul;
-        $sdsatus->videopel = $request->videopel;
+        $sdsatus->videopel = 'upload/video/sd1/'.$request->videopel;
+        $sdsatus->dokumen = 'upload/dokumen/sd1/'.$extension;
+
         $sdsatus->update();
 
         return redirect('/adminsd1');

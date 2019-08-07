@@ -119,7 +119,7 @@
           <h6 class="dropdown-header">Kelas:</h6>
           <a class="dropdown-item" href="{{route('admin.sd1')}}">1 sd</a>
           <a class="dropdown-item" href="{{route('admin.sd2')}}">2 sd</a>
-          <a class="dropdown-item" href="login.html">3 sd</a>
+          <a class="dropdown-item" href="{{route('admin.sd3')}}">3 sd</a>
           <a class="dropdown-item" href="login.html">4 sd</a>
           <a class="dropdown-item" href="login.html">5 sd</a>
           <a class="dropdown-item" href="login.html">6 sd</a>

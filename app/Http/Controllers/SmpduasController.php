@@ -45,7 +45,6 @@ class SmpduasController extends Controller
         $smpduas->mapel = $request->mapel;
         $smpduas->judul = $request->judul;
         $smpduas->videopel = 'upload/video/smp2/'.$request->videopel;
-        $smpduas->dokumen = 'upload/dokumen/smp2/'.$extension;
         $smpduas->update();
 
         return redirect('/adminsmp2');
@@ -54,9 +53,9 @@ class SmpduasController extends Controller
     public function create(Request $request){
         $this->validate($request,[
             'mapel' => 'required',
-            'judul' => 'required',
-            'videopel' => 'required',
-            'dokumen' => 'required|file'
+            'judul' => 'required'
+            // 'videopel' => 'required',
+            // 'dokumen' => 'required|file'
         ]);
 
         // $cover = $request->file('videopel');
@@ -72,7 +71,9 @@ class SmpduasController extends Controller
 
         $smpduas->mapel = $request->mapel;
         $smpduas->judul = $request->judul;
-        $smpduas->videopel = 'upload/video/smp2/'.$request->videopel;
+        if($request->videopel != ""){
+            $smpduas->videopel = 'upload/video/smp2/'.$request->videopel;
+        }
 
         $smpduas->save();
 

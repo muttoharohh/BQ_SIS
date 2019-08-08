@@ -1,22 +1,36 @@
 @extends('layout')
 
 @section('content')
-    <div class="container products">
+<style type="text/css">
+    .card{
+        width: 890px;
+        margin : 50px auto;
+        justify-content: center;
+        display: flex;
+    }
+</style>
+
+@foreach($sdempats as $sdempat)
+    <div class="container">
         <div class="row">
-            @foreach($sdempats as $sdempat)
-                    <div class="thumbnail">
-                        <img src="{{ $sdempat->videopel }}" width="500" height="300">
-                        <div class="caption">
-                            <h4>{{ $sdempat->mapel }}</h4>
-                            <p>{{$sdempat->judul}}</p>
-                            <p><strong>Materi : </strong><a href="{{ $sdempat->dokumen }}">Download Pelajaran</a></p>
-                            {{-- <p class="btn-holder"><a href="{{ url('add-to-cart/'.$product->id) }}" class="btn btn-warning btn-block text-center" role="button">Add to cart</a> </p> --}}
-                        </div>
+            <div class="card mx-auto shadow-lg">
+                {{-- <div class="thumbnail"> --}}
+                    {{-- <img class="card-img-top" src="{{ $sdsatu->videopel }}" width="500" height="300" alt="Card image top"> --}}
+                    <video class="card-img-top" controls>
+                            <source src="{{$sdempat->videopel}}">
+                            {{-- <source src="movie.ogg" type="video/ogg"> --}}
+                          Your browser does not support the video tag.
+                          </video>
+                    <div class="card-body">
+                        <h3 class="card-title">{{ $sdempat->mapel }}</h3>
+                        <h4 class="card-subtitle">{{$sdempat->judul}}</h4>
+                        <p class="card-text"><strong>Materi : </strong><a href="{{ $sdempat->videopel }}" download="">Download Video</a></p>
+                        <p class="card-text"><strong>Materi : </strong><a href="{{ $sdempat->dokumen }}" download="">Download Pelajaran</a></p>
+                        {{-- <p class="btn-holder"><a href="{{ url('add-to-cart/'.$product->id) }}" class="btn btn-warning btn-block text-center" role="button">Add to cart</a> </p> --}}
                     </div>
-            @endforeach
- 
+                {{-- </div> --}}
+            </div>
         </div><!-- End row -->
- 
     </div>
-    
+@endforeach
 @endsection

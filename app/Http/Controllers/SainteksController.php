@@ -44,7 +44,6 @@ class SainteksController extends Controller
         $sainteks->mapel = $request->mapel;
         $sainteks->judul = $request->judul;
         $sainteks->videopel = 'upload/video/saintek/'.$request->videopel;
-        $sainteks->dokumen = 'upload/dokumen/saintek/'.$extension;
         $sainteks->update();
 
         return redirect('/adminsaintek');
@@ -53,9 +52,9 @@ class SainteksController extends Controller
     public function create(Request $request){
         $this->validate($request,[
             'mapel' => 'required',
-            'judul' => 'required',
-            'videopel' => 'required',
-            'dokumen' => 'required|file'
+            'judul' => 'required'
+            // 'videopel' => 'required',
+            // 'dokumen' => 'required|file'
         ]);
 
         // $cover = $request->file('videopel');
@@ -71,7 +70,9 @@ class SainteksController extends Controller
 
         $sainteks->mapel = $request->mapel;
         $sainteks->judul = $request->judul;
-        $sainteks->videopel = 'upload/video/saintek/'.$request->videopel;
+        if($request->videopel != ""){
+            $sainteks->videopel = 'upload/video/saintek/'.$request->videopel;
+        }
 
         $sainteks->save();
 

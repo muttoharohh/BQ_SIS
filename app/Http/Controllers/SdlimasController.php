@@ -42,7 +42,6 @@ class SdlimasController extends Controller
         $sdlimas->mapel = $request->mapel;
         $sdlimas->judul = $request->judul;
         $sdlimas->videopel = 'upload/video/sd5/'.$request->videopel;
-        $sdlimas->dokumen = 'upload/dokumen/sd5/'.$extension;
         $sdlimas->update();
 
         return redirect('/adminsd5');
@@ -51,9 +50,9 @@ class SdlimasController extends Controller
     public function create(Request $request){
         $this->validate($request,[
             'mapel' => 'required',
-            'judul' => 'required',
-            'videopel' => 'required',
-            'dokumen' => 'required|file'
+            'judul' => 'required'
+            // 'videopel' => 'required',
+            // 'dokumen' => 'required|file'
         ]);
 
         // $cover = $request->file('videopel');
@@ -69,7 +68,9 @@ class SdlimasController extends Controller
 
         $sdlimas->mapel = $request->mapel;
         $sdlimas->judul = $request->judul;
-        $sdlimas->videopel = 'upload/video/sd5/'.$request->videopel;
+        if($request->videopel != ""){
+            $sdlimas->videopel = 'upload/video/sd5/'.$request->videopel;
+        }
 
         $sdlimas->save();
 

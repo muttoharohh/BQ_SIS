@@ -39,7 +39,7 @@
                     <nav id="nav-menu-container">
                     <ul class="nav-menu">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/dashboard">Admin</a></li>
+                        {{-- <li><a href="/dashboard">Admin</a></li> --}}
                         <li><a href="/about">About</a></li>
                         
                         <li class="menu-has-children"><a href="">SD</a>
@@ -91,10 +91,10 @@
         @yield('content')
 
         <!-- start footer Area -->		
-        <footer class="footer-area section-gap">
+        <footer class="footer-area section-gap" style="height: auto">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-3  col-md-12">
+                {{-- <div class="row"> --}}
+                    {{-- <div class="col-lg-3  col-md-12">
                         <div class="single-footer-widget">
                             <h6>Top Products</h6>
                             <ul class="footer-nav">
@@ -104,8 +104,8 @@
                                 <li><a href="#">Marketing Service</a></li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="col-lg-6  col-md-12">
+                    </div> --}}
+                    {{-- <div class="col-lg-6  col-md-12">
                         <div class="single-footer-widget newsletter">
                             <h6>Newsletter</h6>
                             <p>You can trust us. we only send promo offers, not a single spam.</p>
@@ -128,8 +128,8 @@
                                 </form>
                             </div>		
                         </div>
-                    </div>
-                    <div class="col-lg-3  col-md-12">
+                    </div> --}}
+                    {{-- <div class="col-lg-3  col-md-12">
                         <div class="single-footer-widget mail-chimp">
                             <h6 class="mb-20">Instragram Feed</h6>
                             <ul class="instafeed d-flex flex-wrap">
@@ -143,8 +143,8 @@
                                 <li><img src="img/i8.jpg" alt=""></li>
                             </ul>
                         </div>
-                    </div>						
-                </div>
+                    </div>						 --}}
+                {{-- </div> --}}
 
                 <div class="row footer-bottom d-flex justify-content-between">
                     <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">

@@ -54,10 +54,10 @@ class UserController extends Controller
         ]);
 
             if(Auth::attempt(['email'=>$request->input('email'),'password'=>$request->input('password')])){
-                if(Session::has('oldUrl')){
-                    $oldUrl=Session::get('oldUrl');
-                    Session::forget('oldUrl');
-                    return redirect()->to($oldUrl);
+                if($request->input('email') == 'admin@gmail.com' && $request->input('password') == '123456'){
+                    return redirect('/dashboard');
+                }else{
+                    return redirect()->route('user.login')->with('alert', 'Anda bukan admin!!!');
                 }
                 // return redirect()->route('user.profile');
             }
@@ -105,7 +105,7 @@ class UserController extends Controller
                 if($request->input('email') == 'admin@gmail.com' && $request->input('password') == '123456'){
                     return redirect('/dashboard');
                 }else{
-                    return redirect()->route('login.admin')->with('alert', 'Anda bukan admin!!!');
+                    return redirect()->route('admin.login')->with('alert', 'Anda bukan admin!!!');
                 }
                 // return redirect()->route('user.profile');
             }

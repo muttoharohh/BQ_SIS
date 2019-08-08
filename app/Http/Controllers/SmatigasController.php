@@ -44,7 +44,6 @@ class SmatigasController extends Controller
         $smatigas->mapel = $request->mapel;
         $smatigas->judul = $request->judul;
         $smatigas->videopel = 'upload/video/sma3/'.$request->videopel;
-        $smatigas->dokumen = 'upload/dokumen/sma3/'.$extension;
         $smatigas->update();
 
         return redirect('/adminsma3');
@@ -53,9 +52,9 @@ class SmatigasController extends Controller
     public function create(Request $request){
         $this->validate($request,[
             'mapel' => 'required',
-            'judul' => 'required',
-            'videopel' => 'required',
-            'dokumen' => 'required|file'
+            'judul' => 'required'
+            // 'videopel' => 'required',
+            // 'dokumen' => 'required|file'
         ]);
 
         // $cover = $request->file('videopel');
@@ -71,7 +70,9 @@ class SmatigasController extends Controller
 
         $smatigas->mapel = $request->mapel;
         $smatigas->judul = $request->judul;
-        $smatigas->videopel = 'upload/video/sma3/'.$request->videopel;
+        if($request->videopel != ""){
+            $smatigas->videopel = 'upload/video/sma3/'.$request->videopel;
+        }
 
         $smatigas->save();
 

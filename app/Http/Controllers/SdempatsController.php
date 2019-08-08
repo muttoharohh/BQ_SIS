@@ -42,7 +42,6 @@ class SdempatsController extends Controller
         $sdempats->mapel = $request->mapel;
         $sdempats->judul = $request->judul;
         $sdempats->videopel = 'upload/video/sd4/'.$request->videopel;
-        $sdempats->dokumen = 'upload/dokumen/sd4/'.$extension;
         $sdempats->update();
 
         return redirect('/adminsd4');
@@ -51,9 +50,9 @@ class SdempatsController extends Controller
     public function create(Request $request){
         $this->validate($request,[
             'mapel' => 'required',
-            'judul' => 'required',
-            'videopel' => 'required',
-            'dokumen' => 'required|file'
+            'judul' => 'required'
+            // 'videopel' => 'required',
+            // 'dokumen' => 'required|file'
         ]);
 
         // $cover = $request->file('videopel');
@@ -69,7 +68,9 @@ class SdempatsController extends Controller
 
         $sdempats->mapel = $request->mapel;
         $sdempats->judul = $request->judul;
-        $sdempats->videopel = 'upload/video/sd4/'.$request->videopel;
+        if($request->videopel != ""){
+            $sdempats->videopel = 'upload/video/sd4/'.$request->videopel;
+        }
 
         $sdempats->save();
 

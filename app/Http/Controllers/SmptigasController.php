@@ -44,7 +44,6 @@ class SmptigasController extends Controller
         $smptigas->mapel = $request->mapel;
         $smptigas->judul = $request->judul;
         $smptigas->videopel = 'upload/video/smp3/'.$request->videopel;
-        $smptigas->dokumen = 'upload/dokumen/smp3/'.$extension;
         $smptigas->update();
 
         return redirect('/adminsmp3');
@@ -53,9 +52,9 @@ class SmptigasController extends Controller
     public function create(Request $request){
         $this->validate($request,[
             'mapel' => 'required',
-            'judul' => 'required',
-            'videopel' => 'required',
-            'dokumen' => 'required|file'
+            'judul' => 'required'
+            // 'videopel' => 'required',
+            // 'dokumen' => 'required|file'
         ]);
 
         // $cover = $request->file('videopel');
@@ -71,7 +70,9 @@ class SmptigasController extends Controller
 
         $smptigas->mapel = $request->mapel;
         $smptigas->judul = $request->judul;
-        $smptigas->videopel = 'upload/video/smp3/'.$request->videopel;
+        if($request->videopel != ""){
+            $smptigas->videopel = 'upload/video/smp3/'.$request->videopel;
+        }
 
         $smptigas->save();
 

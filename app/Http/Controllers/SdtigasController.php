@@ -43,7 +43,6 @@ class SdtigasController extends Controller
         $sdtigas->mapel = $request->mapel;
         $sdtigas->judul = $request->judul;
         $sdtigas->videopel = 'upload/video/sd3/'.$request->videopel;
-        $sdtigas->dokumen = 'upload/dokumen/sd3/'.$extension;
         $sdtigas->update();
 
         return redirect('/adminsd3');
@@ -52,9 +51,9 @@ class SdtigasController extends Controller
     public function create(Request $request){
         $this->validate($request,[
             'mapel' => 'required',
-            'judul' => 'required',
-            'videopel' => 'required',
-            'dokumen' => 'required|file'
+            'judul' => 'required'
+            // 'videopel' => 'required',
+            // 'dokumen' => 'required|file'
         ]);
 
         // $cover = $request->file('videopel');
@@ -70,7 +69,9 @@ class SdtigasController extends Controller
 
         $sdtigas->mapel = $request->mapel;
         $sdtigas->judul = $request->judul;
-        $sdtigas->videopel = 'upload/video/sd3'.$request->videopel;
+        if($request->videopel != ""){
+            $sdtigas->videopel = 'upload/video/sd3'.$request->videopel;
+        }
 
         $sdtigas->save();
 

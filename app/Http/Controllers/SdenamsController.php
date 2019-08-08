@@ -43,7 +43,6 @@ class SdenamsController extends Controller
         $sdenams->mapel = $request->mapel;
         $sdenams->judul = $request->judul;
         $sdenams->videopel = 'upload/video/sd6/'.$request->videopel;
-        $sdenams->dokumen = 'upload/dokumen/sd6/'.$extension;
         $sdenams->update();
 
         return redirect('/adminsd6');
@@ -52,9 +51,9 @@ class SdenamsController extends Controller
     public function create(Request $request){
         $this->validate($request,[
             'mapel' => 'required',
-            'judul' => 'required',
-            'videopel' => 'required',
-            'dokumen' => 'required|file'
+            'judul' => 'required'
+            // 'videopel' => 'required',
+            // 'dokumen' => 'required|file'
         ]);
 
         // $cover = $request->file('videopel');
@@ -70,7 +69,9 @@ class SdenamsController extends Controller
 
         $sdenams->mapel = $request->mapel;
         $sdenams->judul = $request->judul;
-        $sdenams->videopel = 'upload/video/sd6/'.$request->videopel;
+        if($request->videopel != ""){
+            $sdenams->videopel = 'upload/video/sd6/'.$request->videopel;
+        }
 
         $sdenams->save();
 

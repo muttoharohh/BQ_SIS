@@ -43,7 +43,6 @@ class SdduasController extends Controller
         $sdduas->mapel = $request->mapel;
         $sdduas->judul = $request->judul;
         $sdduas->videopel = 'upload/video/sd2/'.$request->videopel;
-        $sdduas->dokumen = 'upload/dokumen/sd2/'.$extension;
         $sdduas->update();
 
         return redirect('/adminsd2');
@@ -52,9 +51,9 @@ class SdduasController extends Controller
     public function create(Request $request){
         $this->validate($request,[
             'mapel' => 'required',
-            'judul' => 'required',
-            'videopel' => 'required',
-            'dokumen' => 'required|file'
+            'judul' => 'required'
+            // 'videopel' => 'required',
+            // 'dokumen' => 'required|file'
         ]);
 
         // $cover = $request->file('videopel');
@@ -70,7 +69,9 @@ class SdduasController extends Controller
 
         $sdduas->mapel = $request->mapel;
         $sdduas->judul = $request->judul;
-        $sdduas->videopel = 'upload/video/sd2/'.$request->videopel;
+        if($request->videopel != ""){
+            $sdduas->videopel = 'upload/video/sd2/'.$request->videopel;
+        }
 
         $sdduas->save();
 

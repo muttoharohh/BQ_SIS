@@ -45,7 +45,6 @@ class SmasatusController extends Controller
         $smasatus->mapel = $request->mapel;
         $smasatus->judul = $request->judul;
         $smasatus->videopel = 'upload/video/sma1/'.$request->videopel;
-        $smasatus->dokumen = 'upload/dokumen/sma1/'.$extension;
         $smasatus->update();
 
         return redirect('/adminsma1');
@@ -54,9 +53,9 @@ class SmasatusController extends Controller
     public function create(Request $request){
         $this->validate($request,[
             'mapel' => 'required',
-            'judul' => 'required',
-            'videopel' => 'required',
-            'dokumen' => 'required|file'
+            'judul' => 'required'
+            // 'videopel' => 'required',
+            // 'dokumen' => 'required|file'
         ]);
 
         // $cover = $request->file('videopel');
@@ -72,7 +71,9 @@ class SmasatusController extends Controller
 
         $smasatus->mapel = $request->mapel;
         $smasatus->judul = $request->judul;
-        $smasatus->videopel = 'upload/video/sma1/'.$request->videopel;
+        if($request->videopel != ""){
+            $smasatus->videopel = 'upload/video/sma1/'.$request->videopel;
+        }
 
         $smasatus->save();
 

@@ -44,7 +44,6 @@ class SoshumsController extends Controller
         $soshums->mapel = $request->mapel;
         $soshums->judul = $request->judul;
         $soshums->videopel = 'upload/video/soshum/'.$request->videopel;
-        $soshums->dokumen = 'upload/dokumen/soshum/'.$extension;
         $soshums->update();
 
         return redirect('/adminsoshum');
@@ -53,9 +52,9 @@ class SoshumsController extends Controller
     public function create(Request $request){
         $this->validate($request,[
             'mapel' => 'required',
-            'judul' => 'required',
-            'videopel' => 'required',
-            'dokumen' => 'required|file'
+            'judul' => 'required'
+            // 'videopel' => 'required',
+            // 'dokumen' => 'required|file'
         ]);
 
         // $cover = $request->file('videopel');
@@ -71,7 +70,9 @@ class SoshumsController extends Controller
 
         $soshums->mapel = $request->mapel;
         $soshums->judul = $request->judul;
-        $soshums->videopel = 'upload/video/soshum/'.$request->videopel;
+        if($request->videopel != ""){
+            $soshums->videopel = 'upload/video/soshum/'.$request->videopel;
+        }
 
         $soshums->save();
 

@@ -65,7 +65,7 @@ Route::post('/loginadmin',[
     'middleware' => 'guest'
 ]);
 Route::get('/dashboard',[
-    'uses' => 'DashboardController@getdashboard',
+    'uses' => 'UserController@getuser',
     'as' => 'dashboard.admin',
     'middleware' => 'auth'
 ]);

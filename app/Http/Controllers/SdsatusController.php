@@ -43,7 +43,6 @@ class SdsatusController extends Controller
         $sdsatus->mapel = $request->mapel;
         $sdsatus->judul = $request->judul;
         $sdsatus->videopel = 'upload/video/sd1/'.$request->videopel;
-        $sdsatus->dokumen = 'upload/dokumen/sd1/'.$extension;
 
         $sdsatus->update();
 
@@ -53,9 +52,9 @@ class SdsatusController extends Controller
     public function create(Request $request){
         $this->validate($request,[
             'mapel' => 'required',
-            'judul' => 'required',
-            'videopel' => 'required',
-            'dokumen' => 'required|file'
+            'judul' => 'required'
+            // 'videopel' => 'required',
+            // 'dokumen' => 'required|file'
         ]);
 
         // $cover = $request->file('videopel');
@@ -71,7 +70,9 @@ class SdsatusController extends Controller
 
         $sdsatus->mapel = $request->mapel;
         $sdsatus->judul = $request->judul;
-        $sdsatus->videopel = 'upload/video/sd1/'.$request->videopel;
+        if($request->videopel != ""){
+            $sdsatus->videopel = 'upload/video/sd1/'.$request->videopel;
+        }
 
         $sdsatus->save();
 

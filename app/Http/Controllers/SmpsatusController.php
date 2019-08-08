@@ -45,7 +45,6 @@ class SmpsatusController extends Controller
         $smpsatus->mapel = $request->mapel;
         $smpsatus->judul = $request->judul;
         $smpsatus->videopel = 'upload/video/smp1/'.$request->videopel;
-        $smpsatus->dokumen = 'upload/dokumen/smp1/'.$extension;
         $smpsatus->update();
 
         return redirect('/adminsmp1');
@@ -54,9 +53,9 @@ class SmpsatusController extends Controller
     public function create(Request $request){
         $this->validate($request,[
             'mapel' => 'required',
-            'judul' => 'required',
-            'videopel' => 'required',
-            'dokumen' => 'required|file'
+            'judul' => 'required'
+            // 'videopel' => 'required',
+            // 'dokumen' => 'required|file'
         ]);
 
         // $cover = $request->file('videopel');
@@ -72,7 +71,9 @@ class SmpsatusController extends Controller
 
         $smpsatus->mapel = $request->mapel;
         $smpsatus->judul = $request->judul;
-        $smpsatus->videopel = 'upload/video/smp1/'.$request->videopel;
+        if($request->videopel != ""){
+            $smpsatus->videopel = 'upload/video/smp1/'.$request->videopel;
+        }
 
         $smpsatus->save();
 

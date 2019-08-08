@@ -83,6 +83,19 @@ Route::get('/logoutadmin',[
     'middleware' => 'auth'
 ]);
 
+Route::get('/adminuser/{id}/delete',[
+    'uses' => 'UserController@delete',
+    'middleware' => 'auth'
+]);
+Route::get('/adminuser/{id}/edit',[
+    'uses' => 'UserController@edit',
+    'middleware' => 'auth'
+]);
+Route::post('/adminuser/{id}/update',[
+    'uses' => 'UserController@update',
+    'middleware' => 'auth'
+]);
+
 
 Route::get('/adminsd1',[
     'uses' => 'SdsatusController@sdsatu_viewadmin',

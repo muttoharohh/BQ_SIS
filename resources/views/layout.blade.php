@@ -42,7 +42,7 @@
                         {{-- <li><a href="/dashboard">Admin</a></li> --}}
                         <li><a href="/about">About</a></li>
                         
-                        <li class="menu-has-children"><a href="">SD</a>
+                        {{-- <li class="menu-has-children"><a href="">SD</a>
                         <ul>
                             <li><a href="/sd1">Kelas 1</a></li>
                             <li><a href="/sd2">Kelas 2</a></li>
@@ -50,7 +50,7 @@
                             <li><a href="/sd4">Kelas 4</a></li>
                             <li><a href="/sd5">Kelas 5</a></li>
                             <li><a href="/sd6">Kelas 6</a></li>
-                        </ul>
+                        </ul> --}}
                     </li>
                     <li class="menu-has-children"><a href="">SMP</a>
                         <ul>
@@ -72,13 +72,13 @@
                             <li><a href="/saintek">SAINTEK</a></li>
                         </ul>
                         </li>
-                        <li class="menu-has-children"><a href="">User Management</a>
+                        <li class="menu-has-children"><a href="">User Account</a>
                             <ul>
                                 @if (Auth::check())
                                     <li><a href="{{route('user.logout')}}">Logout</a></li>
                                 @else
                                     <li><a href="{{route('user.login')}}">Login</a></li>
-                                    <li><a href="{{route('user.signup')}}">SignUp</a></li>
+                                    {{-- <li><a href="{{route('user.signup')}}">SignUp</a></li> --}}
                                 @endif
                             </ul>
                         </li>
@@ -93,18 +93,17 @@
         <!-- start footer Area -->		
         <footer class="footer-area section-gap" style="height: auto">
             <div class="container">
-                {{-- <div class="row"> --}}
-                    {{-- <div class="col-lg-3  col-md-12">
+                <div class="row">
+                    <div class="col-lg-3  col-md-12">
                         <div class="single-footer-widget">
-                            <h6>Top Products</h6>
+                            <h6 style="color: white">Contact Person</h6>
                             <ul class="footer-nav">
-                                <li><a href="#">Managed Website</a></li>
-                                <li><a href="#">Manage Reputation</a></li>
-                                <li><a href="#">Power Tools</a></li>
-                                <li><a href="#">Marketing Service</a></li>
+                                <li>1. Karisen (0822-1928-8811)</li>
+                                <li>2. Ardian  (0819-2776-1719)</li>
+                                <li>3. Hendrik (0812-7881-8551)</li>
                             </ul>
                         </div>
-                    </div> --}}
+                    </div>
                     {{-- <div class="col-lg-6  col-md-12">
                         <div class="single-footer-widget newsletter">
                             <h6>Newsletter</h6>
@@ -144,20 +143,20 @@
                             </ul>
                         </div>
                     </div>						 --}}
-                {{-- </div> --}}
+                </div>
 
                 <div class="row footer-bottom d-flex justify-content-between">
                     <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Bimbel Quality | Supported By Smart Integrated System</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
-                    <div class="col-lg-4 col-sm-12 footer-social">
+                    {{-- <div class="col-lg-4 col-sm-12 footer-social">
                         <a href="#"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
                         <a href="#"><i class="fa fa-dribbble"></i></a>
                         <a href="#"><i class="fa fa-behance"></i></a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </footer>

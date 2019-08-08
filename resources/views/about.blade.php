@@ -17,11 +17,18 @@
                         </div>
                 </div>
             </div>
-            <div class="col-lg-5 ml-auto pl-lg-5">
-                <h2 class="text-black mb-4">Sekilas Tentang Kami</h2>
-                <p class="mb-4">Kami merupakan solusi untuk pengembang software dan hardware palembang</p>
-                <p class="mb-4">Alamat kami</p>
-            </div>
+
+            <div class="col-lg-4 ml-auto">
+                <h3 class="text-black mb-4">Menerima Bimbingan</h3>
+                <p class="mb-2">1. SMP</p>
+                <p class="mb-2">2. SMA MIPA dan MIPS</p>
+                <p class="mb-2">3. SMP/SMA Olimpiade Komputer)</p><br>
+                <h3 class="text-black mb-4">Fasilitas</h3>
+                <p class="mb-2">1. Free Wifi</p>
+                <p class="mb-2">2. Kelas FUll AC</p>
+                <p class="mb-2">3. Pengajar Orofesional (Lulusan S1 & S2)</p>
+                <p class="mb-2">4. Berpengalaman dan Kompeten</p>
+                <p class="mb-2">5. Konsultasi PR dan Ulangan</p>
         </div>
     </div>
 </div>

@@ -14,6 +14,23 @@ class UserController extends Controller
         return view('signup');
     }
 
+    public function edit($id){
+        $users = \App\User::find($id);
+        return view('admin.edit',['users' => $users]);
+    }
+
+    public function update(Request $request, $id){
+        $users = \App\user::find($id);
+        $users->update($request->all());
+        return redirect()->route('admin.user');
+    }
+
+    public function delete($id){
+        $users = \App\user::find($id);
+        $users-> delete($id);
+        return redirect()->route('admin.user');
+    }
+
     public function postSignup(Request $request){
         $this->validate($request, [
             'name'=>'required|min:4',

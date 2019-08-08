@@ -29,10 +29,10 @@
                                             <td>{{$user->password}}</td>
 
                                             <td>
-                                                <a href="/user/{{$user->id}}/edit" class="btn btn-warning btn-sm">Edit</a>
+                                                <a href="/adminuser/{{$user->id}}/edit" class="btn btn-warning btn-sm">Edit</a>
                                             </td>
                                             <td>
-                                                <a href="/user/{{$user->id}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Hapus Data ?')">Delete</a>
+                                                <a href="/adminuser/{{$user->id}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Hapus Data ?')">Delete</a>
                                             </td>
                                             <tr>
                                         @endforeach

@@ -36,10 +36,10 @@
                     <label for="password">Password</label>
                     <input style="text-align:center" type="password" name="password" id="password" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-primary"></button>
+                <button type="submit" class="btn btn-primary">Login</button><br><br><br>
                 {{csrf_field()}}
                 </form>
-                <p>Don't have an account? <a href="{{route('user.signup')}}">Sign Up</a></p>
+                {{-- <p>Don't have an account? <a href="{{route('user.signup')}}">Sign Up</a></p> --}}
 
             </div>
 
